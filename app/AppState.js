@@ -33,6 +33,15 @@ class AppState extends EventEmitter {
 
   classifiedWords = ['codeworks', 'alien', 'star', 'bitcoin', 'ufo', 'mole', 'hairy', 'flying', 'roof', 'full-stack', 'classroom', 'humanoid', 'camera', 'agent', 'rice-krispy']
 
+  clearanceLevels = {
+    'none': '',
+    'secret': 'secret',
+    'top secret': '1234',
+    'super duper secret': 'password'
+  }
+
+  userClearance = ''
+
 }
 
 export const appState = new Proxy(new AppState(), {
