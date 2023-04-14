@@ -11,7 +11,7 @@ function _drawCases() {
 
 function _drawActive() {
     let active = appState.case
-    setHTML('active', active.ReportTemplate)
+    setHTML('active', active.unlocked ? active.UnredactedReportTemplate : active.RedactedReportTemplate)
 }
 
 export class CasesController {
@@ -22,6 +22,10 @@ export class CasesController {
 
     setActive(caseId) {
         casesService.setActive(caseId)
+    }
+
+    unredactCase() {
+        casesService.unredactCase()
     }
 
 }
