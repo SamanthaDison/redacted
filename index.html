@@ -29,12 +29,32 @@
     <div class="container-fluid">
       <div class="row main-row">
 
-        <!-- SECTION all cases here -->
-        <div class="col-4 pt-4" id="caseList">
-          <!-- <div class="d-flex justify-content-between">
-            <p>Report....</p>
-            <p>4/13/2023</p>
-          </div> -->
+        <div class="col-4 pt-4">
+
+          <section class="row">
+            <h5>Create Report</h5>
+            <form class="d-flex flex-wrap" onsubmit="app.casesController.create()">
+              <input type="text" class="form-control w-100" name="agency" id="" placeholder="Agency Icon">
+              <select class="form- w-50" name="" id="">
+                <option value="none" selected>None</option>
+                <option value="secret">Secret</option>
+                <option value="top secret">Top Secret</option>
+                <option value="super duper secret">Super Duper Secret</option>
+              </select>
+              <input type="date" class="form-control w-50" name="date" id="">
+              <button class="btn btn-primary w-100" type="submit" title="create report"><i
+                  class="mdi mdi-plus"></i></button>
+            </form>
+          </section>
+
+          <!-- SECTION all cases here -->
+          <section class="row p-1" id="caseList">
+            <!-- <div class="d-flex justify-content-between">
+              <p>Report....</p>
+              <p>4/13/2023</p>
+            </div> -->
+          </section>
+
         </div>
 
         <!-- SECTION active case here -->
