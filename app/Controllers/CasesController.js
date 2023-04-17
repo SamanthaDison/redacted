@@ -9,7 +9,7 @@ function _drawCases() {
     //     Pop.error("Please verify your clearance")
     //     return
     // }
-    let cases = appState.cases.filter(c => c.clearance == appState.userClearance)
+    let cases = appState.cases.filter(c => c.agency == appState.userAgency)
     let template = ''
     cases.forEach(c => template += c.ListTemplate)
     setHTML('caseList', template)
@@ -23,7 +23,7 @@ function _drawActive() {
 export class CasesController {
     constructor() {
         // _drawCases()
-        appState.on('userClearance', _drawCases)
+        appState.on('userAgency', _drawCases)
         appState.on('case', _drawActive)
     }
 
@@ -34,5 +34,7 @@ export class CasesController {
     unredactCase() {
         casesService.unredactCase()
     }
+
+
 
 }
