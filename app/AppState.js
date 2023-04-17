@@ -10,23 +10,24 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
   /** @type {import('./Models/Case').Case[]} */
-  cases = [
-    new Case({
-      report: 'A un identified flying object was seen over code works the other day.',
-      clearance: 'secret',
-      agency: '👾'
-    }),
-    new Case({
-      report: 'A large hairy chinned humanoid, was seen tripping on camera behind the full-stack classroom',
-      clearance: 'none',
-      agency: '🦄'
-    }),
-    new Case({
-      report: 'Mole People living on the roof of the building.',
-      clearance: 'top secret',
-      agency: '🏫'
-    })
-  ]
+  // cases = [
+  //   new Case({
+  //     report: 'A un identified flying object was seen over code works the other day.',
+  //     clearance: 'secret',
+  //     agency: '👾'
+  //   }),
+  //   new Case({
+  //     report: 'A large hairy chinned humanoid, was seen tripping on camera behind the full-stack classroom',
+  //     clearance: 'none',
+  //     agency: '🦄'
+  //   }),
+  //   new Case({
+  //     report: 'Mole People living on the roof of the building.',
+  //     clearance: 'top secret',
+  //     agency: '🏫'
+  //   })
+  // ]
+  cases = loadState('cases', [Case])
 
   /** @type {import('./Models/Case').Case|null} */
   case = null
